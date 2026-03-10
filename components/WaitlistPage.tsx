@@ -53,7 +53,8 @@ export default function WaitlistPage() {
       } else {
         const errorData = await response.json().catch(() => ({}));
         setStatus("error");
-        setErrorMessage(errorData.message || "Kayıt sırasında bir hata oluştu.");
+        setErrorMessage(errorData.detail || "Kayıt sırasında bir hata oluştu.");
+        
       }
     } catch (error) {
       setStatus("error");
